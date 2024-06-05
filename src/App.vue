@@ -1,6 +1,24 @@
-<!-- <script></script> -->
+<script>
+import SearchMovies from './components/SearchMovies.vue';
+
+export default {
+  name: 'App',
+  components: {
+    SearchMovies
+  }
+};
+</script>
+
 <template>
-  <h1>Vue Vite Template</h1>
-  <p>Template di partenza per progetti Vite Vue</p>
+  <div id="app">
+    <SearchMovies />
+  </div>
 </template>
-<!-- <style></style> -->
+
+
+
+<style>
+body {
+  background-color: #f8f9fa;
+}
+</style>
