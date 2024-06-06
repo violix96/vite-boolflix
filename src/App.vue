@@ -1,5 +1,4 @@
 <script>
-// import SearchMovies from './components/SearchMovies.vue';
 import SearchMovies from './component/SearchMovies.vue';
 import axios from 'axios';
 import { store } from './store'
@@ -50,7 +49,9 @@ export default {
 
 <template>
   <div id="app">
+    <AppHeader></AppHeader>
     <SearchMovies @search-event="onSearch" />
+
   </div>
 </template>
 

@@ -21,18 +21,23 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-5">
+  <header class="bg-black d-flex">
+    <div class="container d-flex justify-content-between">
+      <h1 class="text-danger">Boolflix</h1>
+      <div class="input-group  cerca mt-2 mb-3">
+        <input v-model="inputText" type="text" class="form-control" placeholder="Inserisci il nome del film o serie"
+          @keyup.enter="$emit('search-event', inputText)" />
+        <button @click="$emit('search-event', inputText)" class="btn btn-primary">Cerca</button>
+      </div>
+    </div>
+  </header>
+  <div class="container mt-2">
     <div class="row">
+      <div class="col-4"></div>
       <div class="col-12">
-        <h1 class="text-center text-danger">Cerca Film</h1>
-        <div class="input-group mb-3">
-          <input v-model="inputText" type="text" class="form-control" placeholder="Inserisci il nome del film o serie"
-            @keyup.enter="$emit('search-event', inputText)" />
-          <button @click="$emit('search-event', inputText)" class="btn btn-primary">Cerca</button>
-        </div>
         <!-- Mostra i risultati MOVIE -->
         <div v-if="store.resultsMovie.length > 0" class="mt-5">
-          <h2 class="text-center text-white">Risultati della ricerca Movie:</h2>
+          <h2 class="text-left my-5">Risultati della ricerca Movie:</h2>
           <div class="row">
             <div v-for="film in  store.resultsMovie " :key="film.id" class="col-md-4 mb-3">
               <div class="card" style="width: 18rem;">
@@ -55,7 +60,7 @@ export default {
 
         <!-- TV -->
         <div v-if="store.resultsTv.length > 0" class="mt-5">
-          <h2 class="text-center text-white">Risultati della ricerca Tv:</h2>
+          <h2 class="text-left my-5">Risultati delle serie TV:</h2>
           <div class="row">
             <div v-for=" tv  in  store.resultsTv " :key="tv.id" class="col-md-4 mb-3">
               <div class="card" style="width: 18rem;">
@@ -84,12 +89,20 @@ export default {
   
 <style scoped>
 .container {
-  margin-top: 50px;
+  margin-top: 10px;
 
 }
 
 .flag {
   width: 50px;
+}
+
+h2 {
+  color: #DC3542;
+}
+
+.cerca {
+  width: 400px;
 }
 </style>
   
