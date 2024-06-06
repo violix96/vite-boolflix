@@ -36,6 +36,7 @@ export default {
                   <p class="card-text">Lingua: 
                     {{ film.original_language }}</p>
                   <p class="card-text">Voto: {{ film.vote_average }}</p>
+                  <img class="flag" :src="'/public/img/' + film.original_language + '.svg'" alt="">
                 </div>
               </div>
             </div>
@@ -55,6 +56,7 @@ export default {
                   <p class="card-text">Lingua: 
                     {{ tv.original_language }}</p>
                   <p class="card-text">Voto: {{ tv.vote_average }}</p>
+                  <img class="flag" :src="'/public/img/' + tv.original_language + '.svg'" alt="">
                 </div>
               </div>
             </div>
@@ -70,6 +72,13 @@ export default {
 <style scoped>
 .container {
   margin-top: 50px;
+
 }
+
+.flag{
+  width: 50px;
+}
+
+
 </style>
   

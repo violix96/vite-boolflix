@@ -1,5 +1,6 @@
 <script>
-import SearchMovies from './components/SearchMovies.vue';
+// import SearchMovies from './components/SearchMovies.vue';
+import SearchMovies from './component/SearchMovies.vue';
 import axios from 'axios';
 import { store } from './store'
 
