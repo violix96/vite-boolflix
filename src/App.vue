@@ -13,6 +13,7 @@ export default {
   data() {
     return {
       store,
+      axios
     }
   },
   methods: {
@@ -22,14 +23,18 @@ export default {
 
 
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=8a3b83078838507514062cfc870ff804&query=${inputText}&language=it-IT`).then((response) => {
-        this.store.results = response.data.results;
+        this.store.resultsMovie = response.data.results;
+
+      });
+      axios.get(`https://api.themoviedb.org/3/search/tv?api_key=8a3b83078838507514062cfc870ff804&query=${inputText}&language=it-IT`).then((response) => {
+        this.store.resultsTv = response.data.results;
 
       });
 
-      const filteredResults = store.results.filter((result) =>
-        result.original_title.toLowerCase().includes(inputText.toLowerCase()) || result.title.toLowerCase().includes(inputText.toLowerCase()) || result.original_language.toLowerCase().includes(inputText.toLowerCase()) || result.original_language.toLowerCase().includes(inputText.toLowerCase()) || result.vote_average.toString().includes(inputText))
-      console.log(filteredResults);
-      store.results = filteredResults;
+      // const filteredResults = store.results.filter((result) =>
+      //   result.original_title.toLowerCase().includes(inputText.toLowerCase()) || result.title.toLowerCase().includes(inputText.toLowerCase()) || result.original_language.toLowerCase().includes(inputText.toLowerCase()) || result.original_language.toLowerCase().includes(inputText.toLowerCase()) || result.vote_average.toString().includes(inputText))
+      // console.log(filteredResults);
+      // store.results = filteredResults;
     },
   },
   created() {
