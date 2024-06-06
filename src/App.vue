@@ -32,11 +32,13 @@ export default {
 
       });
 
+
       // const filteredResults = store.results.filter((result) =>
       //   result.original_title.toLowerCase().includes(inputText.toLowerCase()) || result.title.toLowerCase().includes(inputText.toLowerCase()) || result.original_language.toLowerCase().includes(inputText.toLowerCase()) || result.original_language.toLowerCase().includes(inputText.toLowerCase()) || result.vote_average.toString().includes(inputText))
       // console.log(filteredResults);
       // store.results = filteredResults;
     },
+
   },
   created() {
 
