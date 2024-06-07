@@ -10,7 +10,7 @@ export default {
   },
   methods: {
     convertVote(voto) {
-      console.log(Math.round(voto / 2))
+      // console.log(Math.round(voto / 2))
       return Math.round(voto / 2);
     }
   }
